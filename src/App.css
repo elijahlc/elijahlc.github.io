@@ -1,0 +1,13 @@
+@media (min-width: 768px) {
+	.App {
+		min-height: calc(var(--vh, 1vh) * 100);
+		display: flex;
+	}
+
+	main {
+		position: absolute;
+		right: 0;
+		overflow-y: scroll;
+		width: 67%;
+	}
+}
