@@ -41,7 +41,7 @@ const App = () => {
 
 	return (
 		<div className="App">
-			{size.width < 768 ? (
+			{size.width < 769 ? (
 				<>
 					<SidebarTop />
 					<main>

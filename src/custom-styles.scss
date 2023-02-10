@@ -19,3 +19,7 @@ $scheme-main: $white;
 $family-secondary: $family-title;
 
 @import '../node_modules/bulma/bulma.sass';
+
+hr {
+	background-color: $grey-lighter;
+}
