@@ -4,7 +4,7 @@ const About = () => {
 	return (
 		<Section>
 			<Heading renderAs="h2" textFamily="secondary" textTransform="uppercase" textSize={1} textColor="primary">
-				Hi there, I'm Eli.
+				Hi, I'm Eli.
 			</Heading>
 			<Content renderAs="p" textSize={5}>
 				In 2019, while working at an advertising agency, I solved a basic bug related to a client's Facebook pixel. My
@@ -17,8 +17,8 @@ const About = () => {
 
 			<Content renderAs="p" textSize={5}>
 				I have brought my 5 years of Customer Success and Client Services leadership experience to my pivot into
-				software engineering, which has led me to be an empathetic and user-focused software engineer, enthusiastic
-				about collaborating to provide scalable solutions to user problems.
+				software engineering, which has led me to be empathetic and user-focused, enthusiastic about collaborating to
+				provide scalable solutions to user problems.
 			</Content>
 
 			<Content renderAs="p" textSize={5}>
@@ -29,7 +29,6 @@ const About = () => {
 			<Button color="link" size="medium" textColor="white">
 				Get in touch
 			</Button>
-			<hr />
 		</Section>
 	);
 };

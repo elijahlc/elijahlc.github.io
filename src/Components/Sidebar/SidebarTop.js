@@ -1,4 +1,4 @@
-import { Heading, Content, Icon } from 'react-bulma-components';
+import { Heading } from 'react-bulma-components';
 
 import Avatar from './Avatar';
 
@@ -11,14 +11,14 @@ const SidebarTop = () => {
 			<Heading
 				renderAs="h2"
 				textFamily="primary"
-				textSize={3}
+				textSize={2}
 				textColor="white"
 				textAlign="right"
 				mobile={{ textAlign: 'center' }}
 			>
-				Fullstack Software Engineer
+				Software Engineer
 			</Heading>
-			<Heading subtitle textColor="white" textSize={5} textAlign="right" mobile={{ textAlign: 'center' }}>
+			<Heading subtitle textColor="white" textSize={3} textAlign="right" mobile={{ textAlign: 'center' }}>
 				Problem-Solver | Life-long Learner
 			</Heading>
 		</div>

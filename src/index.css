@@ -2,10 +2,3 @@ body {
 	position: relative;
 	margin: 0;
 }
-
-main {
-	position: absolute;
-	right: 0;
-	overflow-y: scroll;
-	width: 67%;
-}

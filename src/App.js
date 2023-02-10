@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Section } from 'react-bulma-components';
 
 import Sidebar from './Components/Sidebar/Sidebar';
 import SidebarTop from './Components/Sidebar/SidebarTop';
 import SidebarBottom from './Components/Sidebar/SidebarBottom';
 import About from './Components/About/About';
+import Portfolio from './Components/Portfolio/Portfolio';
 
 import './custom-styles.scss';
 import './App.css';
@@ -46,6 +46,8 @@ const App = () => {
 					<SidebarTop />
 					<main>
 						<About />
+						<hr style={{ margin: '0 1.5rem' }} />
+						<Portfolio />
 					</main>
 					<SidebarBottom />
 				</>
@@ -54,6 +56,8 @@ const App = () => {
 					<Sidebar />
 					<main>
 						<About />
+						<hr style={{ margin: '0 3rem' }} />
+						<Portfolio />
 					</main>
 				</>
 			)}
