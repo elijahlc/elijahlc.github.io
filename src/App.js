@@ -5,6 +5,7 @@ import SidebarTop from './Components/Sidebar/SidebarTop';
 import SidebarBottom from './Components/Sidebar/SidebarBottom';
 import About from './Components/About/About';
 import Portfolio from './Components/Portfolio/Portfolio';
+import Contact from './Components/Contact/Contact';
 
 import './custom-styles.scss';
 import './App.css';
@@ -48,6 +49,8 @@ const App = () => {
 						<About />
 						<hr style={{ margin: '0 1.5rem' }} />
 						<Portfolio />
+						<hr style={{ margin: '0 1.5rem' }} />
+						<Contact />
 					</main>
 					<SidebarBottom />
 				</>
@@ -58,6 +61,8 @@ const App = () => {
 						<About />
 						<hr style={{ margin: '0 3rem' }} />
 						<Portfolio />
+						<hr style={{ margin: '0 3rem' }} />
+						<Contact />
 					</main>
 				</>
 			)}

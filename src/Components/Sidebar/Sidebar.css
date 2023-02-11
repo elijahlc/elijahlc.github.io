@@ -1,8 +1,9 @@
 .SidebarTop {
 	background: hsla(12, 76%, 61%, 1);
-	background: linear-gradient(270deg, hsla(12, 76%, 61%, 1) 0%, hsla(43, 74%, 66%, 1) 98%);
-	background: -moz-linear-gradient(270deg, hsla(12, 76%, 61%, 1) 0%, hsla(43, 74%, 66%, 1) 98%);
-	background: -webkit-linear-gradient(270deg, hsla(12, 76%, 61%, 1) 0%, hsla(43, 74%, 66%, 1) 98%);
+	background: linear-gradient(270deg, hsla(12, 76%, 61%, 1) 0%, hsla(43, 74%, 66%, 1) 100%);
+	background: -moz-linear-gradient(270deg, hsla(12, 76%, 61%, 1) 0%, hsla(43, 74%, 66%, 1) 100%);
+	background: -webkit-linear-gradient(270deg, hsla(12, 76%, 61%, 1) 0%, hsla(43, 74%, 66%, 1) 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E76F51", endColorstr="#E9C46A", GradientType=1 );
 	width: 100%;
 	padding: 2rem;
 	display: flex;
@@ -13,9 +14,10 @@
 
 .SidebarBottom {
 	background: hsla(43, 74%, 66%, 1);
-	background: linear-gradient(270deg, hsla(43, 74%, 66%, 1) 30%, hsla(197, 37%, 24%, 1) 100%);
-	background: -moz-linear-gradient(270deg, hsla(43, 74%, 66%, 1) 30%, hsla(197, 37%, 24%, 1) 100%);
-	background: -webkit-linear-gradient(270deg, hsla(43, 74%, 66%, 1) 30%, hsla(197, 37%, 24%, 1) 100%);
+	background: linear-gradient(270deg, hsla(43, 74%, 66%, 1) 0%, hsla(197, 37%, 24%, 1) 100%);
+	background: -moz-linear-gradient(270deg, hsla(43, 74%, 66%, 1) 0%, hsla(197, 37%, 24%, 1) 100%);
+	background: -webkit-linear-gradient(270deg, hsla(43, 74%, 66%, 1) 0%, hsla(197, 37%, 24%, 1) 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E9C46A", endColorstr="#264653", GradientType=1 );
 	width: 100%;
 	padding: 2rem;
 	display: flex;

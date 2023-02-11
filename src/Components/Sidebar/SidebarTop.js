@@ -18,7 +18,7 @@ const SidebarTop = () => {
 			>
 				Software Engineer
 			</Heading>
-			<Heading subtitle textColor="white" textSize={3} textAlign="right" mobile={{ textAlign: 'center' }}>
+			<Heading subtitle textColor="white" textSize={4} textAlign="right" mobile={{ textAlign: 'center' }}>
 				Problem-Solver | Life-long Learner
 			</Heading>
 		</div>

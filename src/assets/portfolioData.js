@@ -18,6 +18,22 @@ const portfolio = [
 		},
 	},
 	{
+		project: 'DrinkRecommender',
+		description:
+			'Developed a fully responsive web platform to recommend custom cocktails based on a custom list of ingredients inputted by the user.',
+		workType: 'Solo personal project',
+		contributions: [
+			'Built integration with 3rd party API, theCocktailDB, to ingest, sort, and filter both ingredient and drink data',
+			'Incorporated and customized MaterialUI components for responsive styling',
+		],
+		techStack: ['Node.js', 'Express.js', 'Axios', 'React', 'Redux', 'MaterialUI'],
+		photos: ['dr1', 'dr2', 'dr3', 'dr4', 'dr5', 'dr6'],
+		links: {
+			site: 'https://drink-recommender.herokuapp.com/',
+			github: 'https://github.com/elijahlc/drink-recommender',
+		},
+	},
+	{
 		project: 'Locker.ai',
 		description:
 			"Launched a web app for designing sneakers with AI-generated images, a custom color palette, and rendering a user's designs in 3D.",
@@ -45,22 +61,6 @@ const portfolio = [
 		links: {
 			site: 'https://lockerai.herokuapp.com/',
 			github: 'https://github.com/elijahlc/locker.ai',
-		},
-	},
-	{
-		project: 'DrinkRecommender',
-		description:
-			'Developed a fully responsive web platform to recommend custom cocktails based on a custom list of ingredients inputted by the user.',
-		workType: 'Solo personal project',
-		contributions: [
-			'Built integration with 3rd party API, theCocktailDB, to ingest, sort, and filter both ingredient and drink data',
-			'Incorporated and customized MaterialUI components for responsive styling',
-		],
-		techStack: ['Node.js', 'Express.js', 'Axios', 'React', 'Redux', 'MaterialUI'],
-		photos: ['dr1', 'dr2', 'dr3', 'dr4', 'dr5', 'dr6'],
-		links: {
-			site: 'https://drink-recommender.herokuapp.com/',
-			github: 'https://github.com/elijahlc/drink-recommender',
 		},
 	},
 ];
