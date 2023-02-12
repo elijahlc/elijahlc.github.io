@@ -1,22 +1,22 @@
 import { useState } from 'react';
-import { Section, Heading, Card, Container, Content, Button, Modal } from 'react-bulma-components';
-
-import dr1 from '../../assets/dr1.png';
-import dr2 from '../../assets/dr2.png';
-import dr3 from '../../assets/dr3.png';
-import dr4 from '../../assets/dr4.png';
-import dr5 from '../../assets/dr5.png';
-import dr6 from '../../assets/dr6.png';
-
-import gm1 from '../../assets/gm1.png';
-
-import lai1 from '../../assets/lai1.png';
+import { Section, Heading, Card, Container, Content, Button, Modal, Block, Image } from 'react-bulma-components';
 
 import portfolio from '../../assets/portfolioData';
 
 const Portfolio = () => {
 	const [modalOpen, setModalOpen] = useState(false);
-	const [activeProject, setActiveProject] = useState({});
+	const [activeProject, setActiveProject] = useState({
+		project: '',
+		description: '',
+		workType: '',
+		contributions: [],
+		techStack: [],
+		photos: [],
+		links: {
+			site: '',
+			github: '',
+		},
+	});
 
 	const toggleModal = (e) => {
 		if (!modalOpen) setActiveProject(portfolio[e.target.name]);
@@ -35,10 +35,7 @@ const Portfolio = () => {
 							style={window.innerWidth < 769 ? { width: 'calc(100% - 1rem)' } : { width: 'calc(50% - 1rem)' }}
 							m={2}
 						>
-							<Card.Image
-								size="4by3"
-								src={project.photos[0] === 'dr1' ? dr1 : project.photos[0] === 'gm1' ? gm1 : lai1}
-							/>
+							<Card.Image size="4by3" src={project.photos[0]} />
 
 							<Card.Content textAlign="center">
 								<Heading textFamily="secondary" textTransform="uppercase" textSize={4} textColor="link" renderAs="h3">
@@ -73,15 +70,54 @@ const Portfolio = () => {
 					</Modal.Card.Header>
 
 					<Modal.Card.Body>
-						<Content>{activeProject.workType}</Content>
-						<Content>{activeProject.description}</Content>
-					</Modal.Card.Body>
+						<Heading renderAs="h4" textSize={5}>
+							About the project:
+						</Heading>
+						<Content>
+							<ul>
+								<li>{activeProject.description}</li>
+								<li>{activeProject.workType}</li>
+							</ul>
+						</Content>
 
-					<Modal.Card.Footer>
-						<Button color="link" onClick={toggleModal}>
-							Cool!
-						</Button>
-					</Modal.Card.Footer>
+						<Heading renderAs="h4" textSize={5}>
+							My contributions:
+						</Heading>
+						<Content>
+							<ul>
+								{activeProject.contributions.map((contribution) => (
+									<li>{contribution}</li>
+								))}
+							</ul>
+						</Content>
+
+						<Heading renderAs="h4" textSize={5}>
+							Links:
+						</Heading>
+						<Content>
+							<ul>
+								{activeProject.links.site && (
+									<li>
+										<a href={activeProject.links.site}>Website</a>
+									</li>
+								)}
+								{activeProject.links.github && (
+									<li>
+										<a href={activeProject.links.github}>Github</a>
+									</li>
+								)}
+							</ul>
+						</Content>
+
+						<Heading renderAs="h4" textSize={5}>
+							Screenshots:
+						</Heading>
+						{activeProject.photos.map((image) => (
+							<Block>
+								<Image src={image} />
+							</Block>
+						))}
+					</Modal.Card.Body>
 				</Modal.Card>
 			</Modal>
 		</Section>

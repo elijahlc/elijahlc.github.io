@@ -1,3 +1,22 @@
+import dr1 from './dr1.png';
+import dr2 from './dr2.png';
+import dr3 from './dr3.png';
+import dr4 from './dr4.png';
+import dr5 from './dr5.png';
+import dr6 from './dr6.png';
+
+import gm1 from './gm1.png';
+import gm2 from './gm2.png';
+import gm3 from './gm3.png';
+import gm4 from './gm4.png';
+import gm5 from './gm5.png';
+
+import lai1 from './lai1.png';
+import lai2 from './lai2.png';
+import lai3 from './lai3.png';
+import lai4 from './lai4.png';
+import lai5 from './lai5.png';
+
 const portfolio = [
 	{
 		project: 'GiGi Marie Healing',
@@ -12,9 +31,9 @@ const portfolio = [
 			'Configured domain and DNS settings for deployed website',
 		],
 		techStack: ['Node.js', 'Express.js', 'React', 'Sass / SCSS'],
-		photos: ['gm1', 'gm2', 'gm3', 'gm4', 'gm5'],
+		photos: [gm1, gm2, gm3, gm4, gm5],
 		links: {
-			site: '',
+			site: 'https://gigi-marie.herokuapp.com/',
 		},
 	},
 	{
@@ -23,11 +42,11 @@ const portfolio = [
 			'Developed a fully responsive web platform to recommend custom cocktails based on a custom list of ingredients inputted by the user.',
 		workType: 'Solo personal project',
 		contributions: [
-			'Built integration with 3rd party API, theCocktailDB, to ingest, sort, and filter both ingredient and drink data',
+			'Built integration with 3rd party API (theCocktailDB) to ingest, sort, and filter both ingredient and drink data',
 			'Incorporated and customized MaterialUI components for responsive styling',
 		],
 		techStack: ['Node.js', 'Express.js', 'Axios', 'React', 'Redux', 'MaterialUI'],
-		photos: ['dr1', 'dr2', 'dr3', 'dr4', 'dr5', 'dr6'],
+		photos: [dr1, dr2, dr3, dr4, dr5, dr6],
 		links: {
 			site: 'https://drink-recommender.herokuapp.com/',
 			github: 'https://github.com/elijahlc/drink-recommender',
@@ -57,7 +76,7 @@ const portfolio = [
 			'Chai',
 			'Supertest',
 		],
-		photos: ['lai1', 'lai2', 'lai3', 'lai4', 'lai5'],
+		photos: [lai1, lai2, lai3, lai4, lai5],
 		links: {
 			site: 'https://lockerai.herokuapp.com/',
 			github: 'https://github.com/elijahlc/locker.ai',
