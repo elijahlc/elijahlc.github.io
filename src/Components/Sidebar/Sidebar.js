@@ -1,5 +1,3 @@
-import { Columns } from 'react-bulma-components';
-
 import SidebarTop from './SidebarTop';
 import SidebarBottom from './SidebarBottom';
 

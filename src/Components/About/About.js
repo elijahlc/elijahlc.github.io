@@ -1,4 +1,5 @@
 import { Section, Heading, Content, Button } from 'react-bulma-components';
+import { HashLink } from 'react-router-hash-link';
 
 const About = () => {
 	return (
@@ -26,7 +27,7 @@ const About = () => {
 				and to see code I've contributed to, check out my <a href="https://github.com/elijahlc">Github</a>!
 			</Content>
 
-			<Button color="link" size="medium" textColor="white">
+			<Button renderAs={HashLink} to="/#contact" smooth color="link" size="medium" textColor="white">
 				Get in touch
 			</Button>
 		</Section>
