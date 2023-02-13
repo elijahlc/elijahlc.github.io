@@ -12,6 +12,10 @@
 	justify-content: center;
 }
 
+.SidebarTop a {
+	margin: 0 0.5rem;
+}
+
 .SidebarBottom {
 	background: hsla(43, 74%, 66%, 1);
 	background: linear-gradient(270deg, hsla(43, 74%, 66%, 1) 0%, hsla(197, 37%, 24%, 1) 100%);
@@ -30,6 +34,10 @@
 	.SidebarTop {
 		height: 60vh;
 		align-items: flex-end;
+	}
+
+	.SidebarTop a {
+		margin: 0;
 	}
 
 	.SidebarBottom {

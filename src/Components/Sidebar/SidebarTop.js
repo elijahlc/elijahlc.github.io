@@ -1,4 +1,5 @@
-import { Heading } from 'react-bulma-components';
+import { Heading, Block } from 'react-bulma-components';
+import { HashLink } from 'react-router-hash-link';
 
 import Avatar from './Avatar';
 
@@ -18,9 +19,21 @@ const SidebarTop = () => {
 			>
 				Software Engineer
 			</Heading>
-			<Heading subtitle textColor="white" textSize={4} textAlign="right" mobile={{ textAlign: 'center' }}>
+			<Heading renderAs="p" subtitle textColor="white" textSize={4} textAlign="right" mobile={{ textAlign: 'center' }}>
 				Problem-Solver | Life-long Learner
 			</Heading>
+
+			<Block display="flex" flexDirection={window.innerWidth < 769 ? 'row' : 'column'} textAlign="right" textSize={5}>
+				<HashLink smooth to="/#about">
+					About me
+				</HashLink>
+				<HashLink smooth to="/#portfolio">
+					Portfolio
+				</HashLink>
+				<HashLink smooth to="/#contact">
+					Contact
+				</HashLink>
+			</Block>
 		</div>
 	);
 };

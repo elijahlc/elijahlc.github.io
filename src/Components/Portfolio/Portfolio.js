@@ -25,7 +25,7 @@ const Portfolio = () => {
 	};
 
 	return (
-		<Section>
+		<Section id="portfolio">
 			<Heading renderAs="h2" textFamily="secondary" textTransform="uppercase" textSize={1} textColor="primary">
 				Portfolio
 			</Heading>

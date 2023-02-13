@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 
 const About = () => {
 	return (
-		<Section>
+		<Section id="about">
 			<Heading renderAs="h2" textFamily="secondary" textTransform="uppercase" textSize={1} textColor="primary">
 				Hi, I'm Eli.
 			</Heading>
