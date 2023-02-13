@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { Section, Heading, Card, Container, Content, Button, Modal, Block, Image } from 'react-bulma-components';
 
 import portfolio from '../../assets/portfolioData';
@@ -28,10 +29,11 @@ const Portfolio = () => {
 			<Heading renderAs="h2" textFamily="secondary" textTransform="uppercase" textSize={1} textColor="primary">
 				Portfolio
 			</Heading>
-			<Container fullwidth display="flex" flexDirection="row" flexWrap="wrap">
+			<Container display="flex" flexDirection="row" flexWrap="wrap">
 				{portfolio.map((project, idx) => {
 					return (
 						<Card
+							key={uuidv4()}
 							style={window.innerWidth < 769 ? { width: 'calc(100% - 1rem)' } : { width: 'calc(50% - 1rem)' }}
 							m={2}
 						>
@@ -86,7 +88,7 @@ const Portfolio = () => {
 						<Content>
 							<ul>
 								{activeProject.contributions.map((contribution) => (
-									<li>{contribution}</li>
+									<li key={uuidv4()}>{contribution}</li>
 								))}
 							</ul>
 						</Content>
@@ -113,11 +115,17 @@ const Portfolio = () => {
 							Screenshots:
 						</Heading>
 						{activeProject.photos.map((image) => (
-							<Block>
+							<Block key={uuidv4()}>
 								<Image src={image} />
 							</Block>
 						))}
 					</Modal.Card.Body>
+
+					<Modal.Card.Footer>
+						<Button color="link" onClick={toggleModal}>
+							Close
+						</Button>
+					</Modal.Card.Footer>
 				</Modal.Card>
 			</Modal>
 		</Section>
