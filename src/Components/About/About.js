@@ -22,6 +22,17 @@ const About = () => {
 				provide scalable solutions to user problems.
 			</Content>
 
+			<Content textSize={5}>
+				When I'm not writing software, you can find me:
+				<ul>
+					<li>
+						Hiking (<i>walking on flat trails in the woods</i>) with my wife and dog
+					</li>
+					<li>Making ice cream (my favorite recipes are from Salt & Straw!)</li>
+					<li>Learning new songs on my guitar</li>
+				</ul>
+			</Content>
+
 			<Content renderAs="p" textSize={5}>
 				To learn more about my background, check out my <a href="https://www.linkedin.com/in/elijahcohen/">LinkedIn</a>{' '}
 				and to see code I've contributed to, check out my <a href="https://github.com/elijahlc">Github</a>!
