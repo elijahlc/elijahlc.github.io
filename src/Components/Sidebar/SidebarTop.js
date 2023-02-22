@@ -1,4 +1,4 @@
-import { Heading, Block } from 'react-bulma-components';
+import { Heading, Block, Content } from 'react-bulma-components';
 import { HashLink } from 'react-router-hash-link';
 
 import Avatar from './Avatar';
@@ -24,15 +24,15 @@ const SidebarTop = () => {
 			</Heading>
 
 			<Block display="flex" flexDirection={window.innerWidth < 769 ? 'row' : 'column'} textAlign="right" textSize={5}>
-				<HashLink smooth to="/#about">
+				<Content renderAs={HashLink} smooth to="/#about" textColor="warning" mb={1}>
 					About me
-				</HashLink>
-				<HashLink smooth to="/#portfolio">
+				</Content>
+				<Content renderAs={HashLink} smooth to="/#portfolio" textColor="warning" mb={1}>
 					Portfolio
-				</HashLink>
-				<HashLink smooth to="/#contact">
+				</Content>
+				<Content renderAs={HashLink} smooth to="/#contact" textColor="warning">
 					Contact
-				</HashLink>
+				</Content>
 			</Block>
 		</div>
 	);
