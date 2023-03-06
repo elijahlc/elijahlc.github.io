@@ -28,12 +28,12 @@ const portfolio = [
 			'Designed a user-friendly layout targeted to support new customers to learn about the business and book services',
 			'Used and customized Bulma CSS framework for responsive styling',
 			"Embedded Calendly using Calendly's React library",
-			// 'Configured domain and DNS settings for deployed website',
+			'Configured domain and DNS settings for deployed website',
 		],
 		techStack: ['Node.js', 'Express.js', 'React', 'Sass / SCSS'],
 		photos: [gm1, gm2, gm3, gm4, gm5],
 		links: {
-			site: 'https://gigi-marie.herokuapp.com/',
+			site: 'https://www.gigimarie.me/',
 		},
 	},
 	{
