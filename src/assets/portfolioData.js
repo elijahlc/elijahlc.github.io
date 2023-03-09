@@ -21,7 +21,7 @@ const portfolio = [
 	{
 		project: 'GiGi Marie Healing',
 		description:
-			'Created a brand new website to enable GiGi Marie to market holestic health services to potential customers through a user-friendly digital platform.',
+			'Created a brand new website to enable GiGi Marie to market holistic health services to potential customers through a user-friendly digital platform.',
 		workType: 'Solo freelance work',
 		contributions: [
 			'Architected server and all frontend components',
