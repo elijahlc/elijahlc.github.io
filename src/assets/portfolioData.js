@@ -17,41 +17,9 @@ import lai3 from './lai3.png';
 import lai4 from './lai4.png';
 import lai5 from './lai5.png';
 
+import ce1 from './ce1.png';
+
 const portfolio = [
-	{
-		project: 'GiGi Marie Healing',
-		description:
-			'Created a brand new website to enable GiGi Marie to market holistic health services to potential customers through a user-friendly digital platform.',
-		workType: 'Solo freelance work',
-		contributions: [
-			'Architected server and all frontend components',
-			'Designed a user-friendly layout targeted to support new customers to learn about the business and book services',
-			'Used and customized Bulma CSS framework for responsive styling',
-			"Embedded Calendly using Calendly's React library",
-			'Configured domain and DNS settings for deployed website',
-		],
-		techStack: ['Node.js', 'Express.js', 'React', 'Sass / SCSS'],
-		photos: [gm1, gm2, gm3, gm4, gm5],
-		links: {
-			site: 'https://www.gigimarie.me/',
-		},
-	},
-	{
-		project: 'DrinkRecommender',
-		description:
-			'Developed a fully responsive web platform to recommend custom cocktails based on a custom list of ingredients inputted by the user.',
-		workType: 'Solo personal project',
-		contributions: [
-			'Built integration with 3rd party API (theCocktailDB) to ingest, sort, and filter both ingredient and drink data',
-			'Incorporated and customized MaterialUI components for responsive styling',
-		],
-		techStack: ['Node.js', 'Express.js', 'Axios', 'React', 'Redux', 'MaterialUI'],
-		photos: [dr1, dr2, dr3, dr4, dr5, dr6],
-		links: {
-			site: 'https://drink-recommender.herokuapp.com/',
-			github: 'https://github.com/elijahlc/drink-recommender',
-		},
-	},
 	{
 		project: 'Locker.ai',
 		description:
@@ -80,6 +48,55 @@ const portfolio = [
 		links: {
 			site: 'https://lockerai.herokuapp.com/',
 			github: 'https://github.com/elijahlc/locker.ai',
+		},
+	},
+	{
+		project: 'DrinkRecommender',
+		description:
+			'Developed a fully responsive web platform to recommend custom cocktails based on a custom list of ingredients inputted by the user.',
+		workType: 'Solo personal project',
+		contributions: [
+			'Built integration with 3rd party API (theCocktailDB) to ingest, sort, and filter both ingredient and drink data',
+			'Incorporated and customized MaterialUI components for responsive styling',
+		],
+		techStack: ['Node.js', 'Express.js', 'Axios', 'React', 'Redux', 'MaterialUI'],
+		photos: [dr1, dr2, dr3, dr4, dr5, dr6],
+		links: {
+			site: 'https://drink-recommender.herokuapp.com/',
+			github: 'https://github.com/elijahlc/drink-recommender',
+		},
+	},
+	{
+		project: 'GiGi Marie Healing',
+		description:
+			'Created a brand new website to enable GiGi Marie to market holistic health services to potential customers through a user-friendly digital platform.',
+		workType: 'Solo freelance work',
+		contributions: [
+			'Architected server and all frontend components',
+			'Designed a user-friendly layout targeted to support new customers to learn about the business and book services',
+			'Used and customized Bulma CSS framework for responsive styling',
+			"Embedded Calendly using Calendly's React library",
+			'Configured domain and DNS settings for deployed website',
+		],
+		techStack: ['Node.js', 'Express.js', 'React', 'Sass / SCSS'],
+		photos: [gm1, gm2, gm3, gm4, gm5],
+		links: {
+			site: 'https://www.gigimarie.me/',
+		},
+	},
+	{
+		project: 'Cosmic Explorer',
+		description: 'Built interactive app to display data and images from NASA',
+		workType: 'Solo personal project',
+		contributions: [
+			'Used Create-React-App for to speedily bootstrap app',
+			'Integrated with multiple NASA API endpoints to source data based on user-selected date data',
+		],
+		techStack: ['React'],
+		photos: [ce1],
+		links: {
+			site: 'https://cosmic-explorer.herokuapp.com/',
+			github: 'https://github.com/elijahlc/cosmic-explorer',
 		},
 	},
 ];
