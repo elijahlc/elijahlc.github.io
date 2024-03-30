@@ -1,44 +1,84 @@
-import { Section, Heading, Content, Button } from 'react-bulma-components';
-import { HashLink } from 'react-router-hash-link';
+import { Section, Heading, Content, Button } from "react-bulma-components";
+import { HashLink } from "react-router-hash-link";
 
 const About = () => {
 	return (
 		<Section id="about">
-			<Heading renderAs="h2" textFamily="secondary" textTransform="uppercase" textSize={1} textColor="primary">
+			<Heading
+				renderAs="h2"
+				textFamily="secondary"
+				textTransform="uppercase"
+				textSize={1}
+				textColor="primary"
+			>
 				Hi, I'm Eli.
 			</Heading>
-			<Content renderAs="p" textSize={5}>
-				In 2019, while working at an advertising agency, I solved a basic bug related to a client's Facebook pixel. My
-				excitement for using my analytical skills to write and debug code was sparked, and I started learning Javascript
-				on my own for 2 years before enrolling in an immersive engineering program with Fullstack Academy to continue my
-				learning in a collaborative environment. As my engineering skills have deepened and my focus has expanded,
-				solving problems for others (both my teammates and the end users of a product) remains the central tenet of what
-				drives me as a software engineer.
+
+			<Heading
+				subtitle
+				renderAs="h3"
+				textSize={4}
+				weight="semibold"
+				textColor="warning"
+			>
+				Former ad tech customer success & client services leader turned software engineer.
+			</Heading>
+			<Content
+				renderAs="p"
+				textSize={5}
+			>
+				What started in 2019 as a knack for debugging basic bugs in my clients' Facebook pixels grew into a deep
+				excitement for creating products that solve problems for others. As an engineer, I have harnessed my 5 years of
+				customer-facing leadership experience to collaborate cross-functionally to deliver intuitive solutions to
+				customer problems and built tools that simplify & automate repetitive tasks and processes. I thrive on building
+				products that just{" "}
+				<Content
+					renderAs="span"
+					textColor="info"
+					textWeight="semibold"
+				>
+					work
+				</Content>{" "}
+				for people!
 			</Content>
 
-			<Content renderAs="p" textSize={5}>
-				I have brought my 5 years of Customer Success and Client Services leadership experience to my pivot into
-				software engineering, which has led me to be empathetic and user-focused, enthusiastic about collaborating to
-				provide scalable solutions to user problems.
-			</Content>
-
-			<Content textSize={5}>
-				When I'm not writing software, you can find me:
+			<Content
+				renderAs="p"
+				textSize={5}
+			>
+				In my current role, I:
 				<ul>
 					<li>
-						Hiking (<i>walking on flat trails in the woods</i>) with my wife and dog
+						Scoped, architected, and maintain a custom Intercom integration that has reduced engineering time required
+						to review and recommend performance optimizations on new customers' Javascript pixel installations by ~25%
 					</li>
-					<li>Making ice cream (my favorite recipes are from Salt & Straw!)</li>
-					<li>Learning new songs on my guitar</li>
+					<li>
+						Maintain MNTN's public Shopify app, and spearheaded migrating to use theme app extensions and support
+						Shopify's Checkout Extensibility
+					</li>
+					<li>
+						Contribute to a suite of internal tooling designed to support customer-facing teams in guiding customers
+						toward better ad performance & increased revenue generation
+					</li>
 				</ul>
 			</Content>
 
-			<Content renderAs="p" textSize={5}>
-				To learn more about my background, check out my <a href="https://www.linkedin.com/in/elijahcohen/">LinkedIn</a>{' '}
+			<Content
+				renderAs="p"
+				textSize={5}
+			>
+				To learn more about my background, check out my <a href="https://www.linkedin.com/in/elijahcohen/">LinkedIn</a>{" "}
 				and to see code I've contributed to, check out my <a href="https://github.com/elijahlc">Github</a>!
 			</Content>
 
-			<Button renderAs={HashLink} to="/#contact" smooth color="link" size="medium" textColor="white">
+			<Button
+				renderAs={HashLink}
+				to="/#contact"
+				smooth
+				color="link"
+				size="medium"
+				textColor="white"
+			>
 				Get in touch
 			</Button>
 		</Section>
