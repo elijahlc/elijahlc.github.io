@@ -14,6 +14,10 @@ const customConfig = defineConfig({
     tokens: {
       fonts: {
         heading: { value: 'Raleway, sans-serif' },
+        body: {
+          value:
+            '--apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+        },
       },
       colors: {
         red: {
