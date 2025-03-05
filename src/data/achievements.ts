@@ -19,6 +19,7 @@ type AchievementCategory = 'accomplishment' | 'recommendation';
 
 type Achievement = {
   description: string;
+  attribution?: string;
   category: AchievementCategory;
 };
 
@@ -78,27 +79,23 @@ export const skills: SkillCategory[] = [
 export const recentAchievements: Achievement[] = [
   {
     description:
-      "Continuously upgraded MNTN's public Shopify app to meet evolving Shopify technical standards, integrating app extensions to improve performance and achieve Built for Shopify certification",
+      "Maintain MNTN's public Shopify app, and spearheaded the adoption of new Shopify features including theme app extensions and app pixels to earn the app Built for Shopify certification",
     category: 'accomplishment',
   },
   {
     description:
-      "Drove migration of the app's session storage database to a production-level solution, enhancing scalability and performance of the Shopify integration",
+      "Designed and deployed a lightweight React app used by my team to review new customers' Javascript tracking pixel installations for optimal measurement, improving the speed of providing feedback to the customer-facing team",
     category: 'accomplishment',
   },
   {
     description:
-      "Designed and deployed lightweight React app to streamline workflow of reviewing new customers' Javascript pixel installations, reducing team error rates and improving speed",
-    category: 'accomplishment',
-  },
-  {
-    description:
-      "Developed custom CLI tool to export and analyze ticket completion data from Intercom's API, revealing previously-unavailable insights into customer support efficiency",
+      'Contribute to a suite of internal tooling designed to support customer-facing teams in guiding customers toward better ad performance & increased revenue generation',
     category: 'accomplishment',
   },
   {
     description:
       "Eli is an exceptional software engineer. He's very technically proficient across the stack, and he learns and applies new technologies with impressive speed and effectiveness. He's also very, very good with integrations and 3rd party systems. Beyond his technical expertise, Eli is an outstanding communicator—one of the best I’ve ever worked with—able to articulate complex ideas clearly and collaborate seamlessly across teams and functional groups. His organization and time management skills are top-tier, allowing him to consistently deliver high-quality work quickly while supporting and mentoring his teammates. Above all, Eli is a genuinely good person.",
+    attribution: 'recent manager, Chris Warren',
     category: 'recommendation',
   },
 ];
