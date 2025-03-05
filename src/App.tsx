@@ -1,7 +1,13 @@
 import React from 'react';
 import About from './sections/About';
+import Achievements from './sections/Achievements';
 import Sidebar from './components/Sidebar';
-import { useBreakpointValue, Flex, Stack } from '@chakra-ui/react';
+import {
+  useBreakpointValue,
+  Flex,
+  Stack,
+  StackSeparator,
+} from '@chakra-ui/react';
 
 const App: React.FC = () => {
   const sidebar = useBreakpointValue({
@@ -10,10 +16,17 @@ const App: React.FC = () => {
     lg: { display: 'block', width: '25%' },
   }) ?? { display: 'none', width: '100%' };
   return (
-    <Flex as="main" width="100%" height="100vh">
+    <Flex
+      as="main"
+      width="100%"
+      height="100vh"
+      background="bg.subtle"
+      color="gray.700"
+    >
       <Sidebar display={sidebar.display} width={sidebar.width} />
-      <Stack paddingX={6} paddingY={12}>
+      <Stack paddingX={6} paddingY={12} gap={12} separator={<StackSeparator />}>
         <About />
+        <Achievements />
       </Stack>
     </Flex>
   );
