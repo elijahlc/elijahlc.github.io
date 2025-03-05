@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Stack,
-  Heading,
-  Text,
-  Mark,
-  List,
-  Blockquote,
-} from '@chakra-ui/react';
+import { Box, Stack, Heading, Text, Mark, Button } from '@chakra-ui/react';
 import { recentAchievements } from '@/data/achievements';
 
 const About: React.FC = () => {
@@ -48,6 +40,10 @@ const About: React.FC = () => {
         </Mark>{' '}
         for people!
       </Text>
+
+      <Button alignSelf="start" colorPalette="red" size="xl">
+        Get in touch
+      </Button>
     </Stack>
   );
 };
