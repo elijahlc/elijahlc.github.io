@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Stack,
-  Heading,
-  Text,
-  Mark,
-  List,
-  Blockquote,
-} from '@chakra-ui/react';
+import { Box, Stack, Heading, Text, List, Blockquote } from '@chakra-ui/react';
 import { recentAchievements } from '@/data/achievements';
 
 const Achievements: React.FC = () => {
