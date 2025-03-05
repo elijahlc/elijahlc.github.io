@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Stack, Image, Heading, Text, Link } from '@chakra-ui/react';
-import eli from '../assets/images/eli-memoji.png';
+import eli from '../assets/images';
 
 export interface SidebarProps {
   display: string;
