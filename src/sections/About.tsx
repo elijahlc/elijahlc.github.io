@@ -48,34 +48,6 @@ const About: React.FC = () => {
         </Mark>{' '}
         for people!
       </Text>
-
-      <Box>
-        <Text mb={2}>In my current role, I:</Text>
-
-        <List.Root paddingStart={8} gap={2}>
-          {achievementsToHighlight.map((achievement, index) => (
-            <List.Item key={`achievement-${index}`}>
-              {achievement.description}
-            </List.Item>
-          ))}
-        </List.Root>
-      </Box>
-
-      <Box>
-        <Text mb={2}>Here's what others have to say about me:</Text>
-
-        {recommendations.map((recommendation, index) => (
-          <Blockquote.Root key={`recommendation-${index}`} colorPalette="cyan">
-            <Blockquote.Content cite={recommendation.attribution}>
-              {recommendation.description}
-            </Blockquote.Content>
-
-            <Blockquote.Caption>
-              — <cite>{recommendation.attribution}</cite>
-            </Blockquote.Caption>
-          </Blockquote.Root>
-        ))}
-      </Box>
     </Stack>
   );
 };
