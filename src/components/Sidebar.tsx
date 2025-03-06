@@ -12,13 +12,13 @@ const Sidebar: React.FC<SidebarProps> = ({ display, width }) => {
     <Box
       width={width}
       flexShrink={0}
-      height="100vh"
+      minHeight="100vh"
       display={display}
       bgGradient="linear-gradient(to bottom, #e76f51 0%, #f5ab71 20%, #e9c46a 50%, #60a9a7 80%, #40768c 100%)"
       color="white"
       p={4}
     >
-      <Stack alignItems="flex-end" height="100%" justifyContent="center">
+      <Stack alignItems="flex-end" height="100%" justifyContent="flex-start">
         <Image
           src={eli}
           alt="Eli"

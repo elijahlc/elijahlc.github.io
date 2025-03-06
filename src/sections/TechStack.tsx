@@ -1,8 +1,20 @@
 import React from 'react';
 import { Box, Stack, Heading, Text, List, Flex, Icon } from '@chakra-ui/react';
-import icons from '../assets/icons';
-
+import iconClasses from '../assets/icons';
+import { skills } from '@/data/achievements';
 const TechStack: React.FC = () => {
+  const filteredSkills = skills
+    .map((category) => {
+      return {
+        ...category,
+        skills: category.skills.filter((skill) => {
+          return iconClasses.join('').indexOf(skill.name.toLowerCase()) === -1;
+        }),
+      };
+    })
+    .filter((category) => category.skills.length > 0);
+
+  console.log(filteredSkills);
   return (
     <Stack as="section" paddingX={6} gap={6} fontSize="lg">
       <Heading as="h2" size="5xl" textTransform="uppercase" color="yellow.600">
@@ -13,19 +25,25 @@ const TechStack: React.FC = () => {
         <Text mb={2}>On a day-to-day basis I work with:</Text>
 
         <Flex justifyContent="space-evenly">
-          {icons.map((icon, index) => (
-            <Icon key={`icon-${index}`} as={icon} />
+          {iconClasses.map((icon, index) => (
+            <Icon key={`icon-${index}`}>
+              <i style={{ fontSize: '3rem' }} className={icon} />
+            </Icon>
           ))}
         </Flex>
       </Box>
 
-      <List.Root paddingStart={8} gap={2}>
-        <List.Item>JavaScript</List.Item>
-        <List.Item>TypeScript</List.Item>
-        <List.Item>Python</List.Item>
-        <List.Item>HTML</List.Item>
-        <List.Item>CSS</List.Item>
-      </List.Root>
+      <Box>
+        <Text mb={2}>I'm also experienced with:</Text>
+        <List.Root paddingStart={8} gap={2}>
+          {filteredSkills.map((category, index) => (
+            <List.Item key={`skills-${index}`}>
+              {category.name}:{' '}
+              {category.skills.map((skill) => skill.name).join(', ')}
+            </List.Item>
+          ))}
+        </List.Root>
+      </Box>
     </Stack>
   );
 };

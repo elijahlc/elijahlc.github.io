@@ -1,6 +1,7 @@
 import React from 'react';
 import About from './sections/About';
 import Achievements from './sections/Achievements';
+import TechStack from './sections/TechStack';
 import Sidebar from './components/Sidebar';
 import {
   useBreakpointValue,
@@ -19,7 +20,7 @@ const App: React.FC = () => {
     <Flex
       as="main"
       width="100%"
-      height="100vh"
+      minHeight="100vh"
       background="bg.subtle"
       color="gray.700"
     >
@@ -27,6 +28,7 @@ const App: React.FC = () => {
       <Stack paddingX={6} paddingY={12} gap={12} separator={<StackSeparator />}>
         <About />
         <Achievements />
+        <TechStack />
       </Stack>
     </Flex>
   );
