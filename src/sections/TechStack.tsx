@@ -14,7 +14,6 @@ const TechStack: React.FC = () => {
     })
     .filter((category) => category.skills.length > 0);
 
-  console.log(filteredSkills);
   return (
     <Stack as="section" paddingX={6} gap={6} fontSize="lg">
       <Heading as="h2" size="5xl" textTransform="uppercase" color="yellow.600">
