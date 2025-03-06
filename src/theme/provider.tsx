@@ -8,6 +8,7 @@ import {
 import { ThemeProvider } from 'next-themes';
 
 import '@fontsource/raleway/800.css';
+import 'devicon';
 
 const customConfig = defineConfig({
   theme: {
