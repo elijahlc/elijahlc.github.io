@@ -2,6 +2,7 @@ import React from 'react';
 import About from './sections/About';
 import Achievements from './sections/Achievements';
 import TechStack from './sections/TechStack';
+import ContactForm from './components/ContactForm';
 import Sidebar from './components/Sidebar';
 import {
   useBreakpointValue,
@@ -29,6 +30,7 @@ const App: React.FC = () => {
         <About />
         <Achievements />
         <TechStack />
+        <ContactForm />
       </Stack>
     </Flex>
   );
