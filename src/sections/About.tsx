@@ -1,15 +1,7 @@
 import React from 'react';
 import { Box, Stack, Heading, Text, Mark, Button } from '@chakra-ui/react';
-import { recentAchievements } from '@/data/achievements';
 
 const About: React.FC = () => {
-  const achievementsToHighlight = recentAchievements.filter(
-    (achievement) => achievement.category === 'accomplishment'
-  );
-  const recommendations = recentAchievements.filter(
-    (achievement) => achievement.category === 'recommendation'
-  );
-
   return (
     <Stack as="section" paddingX={6} gap={6} fontSize="lg">
       <Box>
