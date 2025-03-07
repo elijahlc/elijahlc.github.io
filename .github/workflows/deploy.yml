@@ -6,9 +6,6 @@ on:
   push:
     branches: ['main']
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -37,8 +34,12 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
+      - name: Inject webhook URL
+        run: echo "VITE_WEBHOOK_URL=${{ secrets.VITE_WEBHOOK_URL }}" >> $GITHUB_ENV
       - name: Build
         run: npm run build
+        env:
+          VITE_WEBHOOK_URL: ${{ secrets.VITE_WEBHOOK_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
