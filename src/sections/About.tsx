@@ -41,7 +41,7 @@ const About: React.FC = () => {
         for people!
       </Text>
 
-      <Button alignSelf="start" colorPalette="red" size="xl">
+      <Button alignSelf="start" colorPalette="cyan" size="xl">
         Get in touch
       </Button>
     </Stack>
