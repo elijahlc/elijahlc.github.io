@@ -21,12 +21,18 @@ const App: React.FC = () => {
     <Flex
       as="main"
       width="100%"
-      minHeight="100vh"
+      height="100vh"
       background="bg.subtle"
       color="gray.700"
     >
       <Sidebar display={sidebar.display} width={sidebar.width} />
-      <Stack paddingX={6} paddingY={12} gap={12} separator={<StackSeparator />}>
+      <Stack
+        overflowY="auto"
+        paddingX={6}
+        paddingY={12}
+        gap={12}
+        separator={<StackSeparator />}
+      >
         <About />
         <Achievements />
         <TechStack />
