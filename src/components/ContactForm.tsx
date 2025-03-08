@@ -36,7 +36,11 @@ const ContactForm: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formDetails),
+        body: JSON.stringify({
+          name: formDetails.name,
+          email: formDetails.email,
+          message: formDetails.message,
+        }),
       });
 
       setFormDetails({
