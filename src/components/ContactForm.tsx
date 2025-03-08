@@ -8,9 +8,11 @@ import {
   Textarea,
   Button,
 } from '@chakra-ui/react';
-const webhookUrl = import.meta.env.VITE_WEBHOOK_URL;
 
 const ContactForm: React.FC = () => {
+  const proxyUrl = import.meta.env.VITE_CLOUDFLARE_PROXY;
+  const webhookUrl = import.meta.env.VITE_WEBHOOK_URL;
+
   const [formDetails, setFormDetails] = useState({
     name: '',
     email: '',
@@ -29,7 +31,7 @@ const ContactForm: React.FC = () => {
 
   const notifyEli = async () => {
     try {
-      await fetch(webhookUrl, {
+      await fetch(`${proxyUrl}?url=${encodeURIComponent(webhookUrl)}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

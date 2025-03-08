@@ -36,10 +36,13 @@ jobs:
         run: npm ci
       - name: Inject webhook URL
         run: echo "VITE_WEBHOOK_URL=${{ secrets.VITE_WEBHOOK_URL }}" >> $GITHUB_ENV
+      - name: Inject proxy URL
+        run: echo "VITE_CLOUDFLARE_PROXY_URL=${{ secrets.VITE_CLOUDFLARE_PROXY_URL }}" >> $GITHUB_ENV
       - name: Build
         run: npm run build
         env:
           VITE_WEBHOOK_URL: ${{ secrets.VITE_WEBHOOK_URL }}
+          VITE_CLOUDFLARE_PROXY_URL: ${{ secrets.VITE_CLOUDFLARE_PROXY_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
