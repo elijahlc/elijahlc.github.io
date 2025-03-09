@@ -1,10 +1,14 @@
 import React from 'react';
-import { Box, Link, Icon } from '@chakra-ui/react';
+import { Flex, Link, Icon } from '@chakra-ui/react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
-const Links: React.FC = () => {
+interface LinksProps {
+  justifyContent: string;
+}
+
+const Links: React.FC<LinksProps> = ({ justifyContent }) => {
   return (
-    <Box justifyContent="flex-end" display="flex" gap={2} textAlign="right">
+    <Flex justifyContent={justifyContent} display="flex" gap={2}>
       <Icon as={Link} href="https://github.com/elijahlc" fontSize="2.5rem">
         <FaGithub />
       </Icon>
@@ -15,7 +19,7 @@ const Links: React.FC = () => {
       >
         <FaLinkedin />
       </Icon>
-    </Box>
+    </Flex>
   );
 };
 

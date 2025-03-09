@@ -27,10 +27,10 @@ const Sidebar: React.FC<SidebarProps> = ({ display, width }) => {
         paddingY={12}
       >
         <Box marginTop="5vh">
-          <Title />
+          <Title alignItems="flex-end" textAlign="right" />
         </Box>
         <Box marginBottom="5vh">
-          <Links />
+          <Links justifyContent="flex-end" />
         </Box>
       </Flex>
     </Box>

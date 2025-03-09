@@ -2,9 +2,14 @@ import React from 'react';
 import { Image, Heading, Text, Stack } from '@chakra-ui/react';
 import { eli } from '../assets/images';
 
-const Title: React.FC = () => {
+interface TitleProps {
+  alignItems: string;
+  textAlign: string;
+}
+
+const Title: React.FC<TitleProps> = ({ alignItems, textAlign }) => {
   return (
-    <Stack alignItems="flex-end" justifyContent="flex-start">
+    <Stack alignItems={alignItems}>
       <Image
         src={eli}
         alt="Eli"
@@ -13,7 +18,12 @@ const Title: React.FC = () => {
         boxSize="150px"
         objectFit="cover"
       />
-      <Heading as="h1" size="4xl" textTransform="uppercase" textAlign="right">
+      <Heading
+        as="h1"
+        size="4xl"
+        textTransform="uppercase"
+        textAlign={textAlign}
+      >
         Software Engineer
       </Heading>
       <Text textAlign="right">Problem-solver | Life-long learner</Text>
