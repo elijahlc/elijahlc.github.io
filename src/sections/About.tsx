@@ -1,7 +1,11 @@
 import React from 'react';
 import { Box, Stack, Heading, Text, Mark, Button } from '@chakra-ui/react';
 
-const About: React.FC = () => {
+interface AboutProps {
+  handleClick: () => void;
+}
+
+const About: React.FC<AboutProps> = ({ handleClick }) => {
   return (
     <Stack as="section" paddingX={6} gap={6} fontSize="lg">
       <Box>
@@ -33,7 +37,12 @@ const About: React.FC = () => {
         for people!
       </Text>
 
-      <Button alignSelf="start" colorPalette="cyan" size="xl">
+      <Button
+        alignSelf="start"
+        colorPalette="cyan"
+        size="xl"
+        onClick={handleClick}
+      >
         Get in touch
       </Button>
     </Stack>

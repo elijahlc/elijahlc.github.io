@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import About from './sections/About';
 import Achievements from './sections/Achievements';
 import TechStack from './sections/TechStack';
@@ -17,6 +17,15 @@ const App: React.FC = () => {
     md: { display: 'block', width: '33%' },
     lg: { display: 'block', width: '25%' },
   }) ?? { display: 'none', width: '100%' };
+
+  const contactRef = useRef<HTMLDivElement>(
+    null
+  ) as React.RefObject<HTMLDivElement>;
+
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <Flex
       as="main"
@@ -33,10 +42,10 @@ const App: React.FC = () => {
         gap={12}
         separator={<StackSeparator />}
       >
-        <About />
+        <About handleClick={scrollToContact} />
         <Achievements />
         <TechStack />
-        <Contact />
+        <Contact sectionRef={contactRef} />
       </Stack>
     </Flex>
   );

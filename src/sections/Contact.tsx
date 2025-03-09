@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { Stack, Heading, Text } from '@chakra-ui/react';
 import ContactForm from '@/components/ContactForm';
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  sectionRef: React.RefObject<HTMLDivElement>;
+}
+
+const Contact: React.FC<ContactProps> = ({ sectionRef }) => {
   const [formSubmitted, toggleFormSubmitted] = useState(false);
 
   return (
-    <Stack as="section" paddingX={6} gap={6} fontSize="lg">
+    <Stack ref={sectionRef} as="section" paddingX={6} gap={6} fontSize="lg">
       <Heading as="h2" size="5xl" textTransform="uppercase" color="yellow.600">
         Contact Me
       </Heading>
