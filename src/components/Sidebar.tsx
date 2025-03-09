@@ -30,7 +30,7 @@ const Sidebar: React.FC<SidebarProps> = ({ display, width }) => {
         <Heading as="h1" size="4xl" textTransform="uppercase" textAlign="right">
           Software Engineer
         </Heading>
-        <Text textAlign="center">Problem-solver | Life-long learner</Text>
+        <Text textAlign="right">Problem-solver | Life-long learner</Text>
       </Stack>
     </Box>
   );
