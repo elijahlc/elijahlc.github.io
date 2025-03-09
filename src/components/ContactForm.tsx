@@ -1,5 +1,14 @@
-import React, { useState } from 'react';
-import { Stack, Field, Input, Textarea, Button } from '@chakra-ui/react';
+import React from 'react';
+import {
+  Stack,
+  Field,
+  Input,
+  Textarea,
+  Button,
+  Alert,
+  AlertIcon,
+} from '@chakra-ui/react';
+import { useForm } from '@/hooks/useForm';
 
 interface ContactFormProps {
   setSent: (sent: boolean) => void;
@@ -9,50 +18,64 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
   const proxyUrl = import.meta.env.VITE_CLOUDFLARE_PROXY;
   const webhookUrl = import.meta.env.VITE_WEBHOOK_URL;
 
-  const [formDetails, setFormDetails] = useState({
+  const initialValues = {
     name: '',
     email: '',
     message: '',
-  });
-
-  const handleInputChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormDetails({
-      ...formDetails,
-      [event.target.name]: event.target.value,
-    });
   };
 
-  const notifyEli = async () => {
+  const notifyEli = async (formData: typeof initialValues) => {
     try {
-      await fetch(`${proxyUrl}?url=${encodeURIComponent(webhookUrl)}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formDetails),
-      });
+      const response = await fetch(
+        `${proxyUrl}?url=${encodeURIComponent(webhookUrl)}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-      setFormDetails({
-        name: '',
-        email: '',
-        message: '',
-      });
+      if (!response.ok) {
+        throw new Error('Failed to send your message. Please try again later.');
+      }
 
       setSent(true);
-    } catch (error) {}
+    } catch (error) {
+      throw new Error(
+        'Network error. Please check your connection and try again.'
+      );
+    }
   };
+
+  const { values, handleChange, handleSubmit, isSubmitting, submitError } =
+    useForm({
+      initialValues,
+      onSubmit: notifyEli,
+    });
 
   return (
     <Stack gap={4}>
+      {submitError && (
+        <Alert.Root
+          status="error"
+          variant="subtle"
+          colorScheme="red"
+          borderRadius="md"
+        >
+          <Alert.Indicator />
+          <Alert.Title>{submitError}</Alert.Title>
+        </Alert.Root>
+      )}
+
       <Field.Root>
         <Field.Label>Your name</Field.Label>
         <Input
           colorPalette="red"
           name="name"
-          onChange={handleInputChange}
-          value={formDetails.name}
+          onChange={handleChange}
+          value={values.name}
         />
       </Field.Root>
 
@@ -61,8 +84,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
         <Input
           colorPalette="red"
           name="email"
-          onChange={handleInputChange}
-          value={formDetails.email}
+          onChange={handleChange}
+          value={values.email}
+          type="email"
         />
       </Field.Root>
 
@@ -72,15 +96,18 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
           placeholder="What's up, Eli?"
           name="message"
           colorPalette="red"
-          onChange={handleInputChange}
-          value={formDetails.message}
+          onChange={handleChange}
+          value={values.message}
         />
       </Field.Root>
+
       <Button
         alignSelf="start"
         size="xl"
         colorPalette="red"
-        onClick={notifyEli}
+        onClick={handleSubmit}
+        isLoading={isSubmitting}
+        loadingText="Sending..."
       >
         Send message
       </Button>
