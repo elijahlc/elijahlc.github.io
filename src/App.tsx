@@ -21,6 +21,7 @@ const App: React.FC = () => {
     () => ({
       flexDirection: breakpoint === 'sm' ? 'column' : 'row',
       showHeader: breakpoint === 'sm',
+      hardcodedHeight: breakpoint !== 'sm' ? '100vh' : undefined,
       overflow: breakpoint === 'sm' ? undefined : 'auto',
       showFooter: breakpoint === 'sm',
       sidebar: {
@@ -44,7 +45,7 @@ const App: React.FC = () => {
     <Flex
       as="main"
       width="100%"
-      height="100vh"
+      height={layout.hardcodedHeight}
       background="bg.subtle"
       color="gray.700"
       direction={layout.flexDirection}
