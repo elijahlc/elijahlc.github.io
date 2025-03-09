@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Stack, Image, Heading, Text } from '@chakra-ui/react';
-import { eli } from '../assets/images';
+import { Box, Flex } from '@chakra-ui/react';
+import Title from './Title';
+import Links from './Links';
 
 export interface SidebarProps {
   display: string;
@@ -16,22 +17,22 @@ const Sidebar: React.FC<SidebarProps> = ({ display, width }) => {
       display={display}
       bgGradient="linear-gradient(to bottom, #e76f51 0%, #f5ab71 20%, #e9c46a 50%, #60a9a7 80%, #40768c 100%)"
       color="white"
-      p={4}
+      paddingX={4}
+      paddingY={8}
     >
-      <Stack alignItems="flex-end" height="100%" justifyContent="flex-start">
-        <Image
-          src={eli}
-          alt="Eli"
-          backgroundColor="whiteAlpha.500"
-          borderRadius="full"
-          boxSize="150px"
-          objectFit="cover"
-        />
-        <Heading as="h1" size="4xl" textTransform="uppercase" textAlign="right">
-          Software Engineer
-        </Heading>
-        <Text textAlign="right">Problem-solver | Life-long learner</Text>
-      </Stack>
+      <Flex
+        direction="column"
+        height="100%"
+        justifyContent="space-between"
+        paddingY={12}
+      >
+        <Box marginTop="5vh">
+          <Title />
+        </Box>
+        <Box marginBottom="5vh">
+          <Links />
+        </Box>
+      </Flex>
     </Box>
   );
 };
