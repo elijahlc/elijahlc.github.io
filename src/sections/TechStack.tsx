@@ -1,7 +1,10 @@
 import React from 'react';
-import { Box, Stack, Heading, Text, List, Wrap, Icon } from '@chakra-ui/react';
+import { Box, Text, List, Wrap, Icon } from '@chakra-ui/react';
 import iconClasses from '../assets/icons';
 import { skills } from '@/data/achievements';
+import Section from '@/components/Section';
+import SectionHeading from '@/components/SectionHeading';
+
 const TechStack: React.FC = () => {
   const filteredSkills = skills
     .map((category) => {
@@ -19,10 +22,8 @@ const TechStack: React.FC = () => {
     .filter((category) => category.skills.length > 0);
 
   return (
-    <Stack as="section" paddingX={6} gap={6} fontSize="lg">
-      <Heading as="h2" size="5xl" textTransform="uppercase" color="yellow.600">
-        Tech Stack
-      </Heading>
+    <Section>
+      <SectionHeading>Tech Stack</SectionHeading>
 
       <Box>
         <Text mb={2}>On a day-to-day basis I work with:</Text>
@@ -47,7 +48,7 @@ const TechStack: React.FC = () => {
           ))}
         </List.Root>
       </Box>
-    </Stack>
+    </Section>
   );
 };
 

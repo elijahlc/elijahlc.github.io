@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { Stack, Heading, Text } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 import ContactForm from '@/components/ContactForm';
+import Section from '@/components/Section';
+import SectionHeading from '@/components/SectionHeading';
 
 interface ContactProps {
-  sectionRef: React.RefObject<HTMLDivElement>;
+  sectionRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const Contact: React.FC<ContactProps> = ({ sectionRef }) => {
   const [formSubmitted, toggleFormSubmitted] = useState(false);
 
   return (
-    <Stack ref={sectionRef} as="section" paddingX={6} gap={6} fontSize="lg">
-      <Heading as="h2" size="5xl" textTransform="uppercase" color="yellow.600">
-        Contact Me
-      </Heading>
+    <Section sectionRef={sectionRef}>
+      <SectionHeading>Contact Me</SectionHeading>
 
       {formSubmitted ? (
         <Text>
@@ -23,7 +23,7 @@ const Contact: React.FC<ContactProps> = ({ sectionRef }) => {
       ) : (
         <ContactForm setSent={toggleFormSubmitted} />
       )}
-    </Stack>
+    </Section>
   );
 };
 
