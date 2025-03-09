@@ -46,6 +46,7 @@ export const skills: SkillCategory[] = [
       { name: 'Express' },
       { name: 'GraphQL' },
       { name: 'REST APIs' },
+      { name: 'Go' },
     ],
   },
   {
@@ -59,11 +60,11 @@ export const skills: SkillCategory[] = [
   },
   {
     name: 'DevOps / deployment',
-    skills: [{ name: 'Docker' }, { name: 'Heroku' }],
+    skills: [{ name: 'Docker' }, { name: 'Heroku' }, { name: 'Codefresh' }],
   },
   {
     name: 'Version control',
-    skills: [{ name: 'Git' }, { name: 'GitHub' }, { name: 'Codefresh' }],
+    skills: [{ name: 'Git' }, { name: 'GitHub' }],
   },
   {
     name: 'Testing',
@@ -72,7 +73,12 @@ export const skills: SkillCategory[] = [
 
   {
     name: 'Other',
-    skills: [{ name: 'Shopify' }, { name: 'Postman' }, { name: 'Zapier' }],
+    skills: [
+      { name: 'Shopify' },
+      { name: 'Postman' },
+      { name: 'Blender' },
+      { name: 'Zapier' },
+    ],
   },
 ];
 

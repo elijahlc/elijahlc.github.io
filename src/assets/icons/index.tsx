@@ -5,6 +5,7 @@ const iconClasses = [
   'devicon-express-original colored',
   'devicon-react-original colored',
   'devicon-redux-original colored',
+  'devicon-vitejs-plain colored',
   'devicon-postgresql-plain colored',
   'devicon-mysql-original colored',
   'devicon-github-original colored',

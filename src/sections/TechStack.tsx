@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Stack, Heading, Text, List, Flex, Icon } from '@chakra-ui/react';
+import { Box, Stack, Heading, Text, List, Wrap, Icon } from '@chakra-ui/react';
 import iconClasses from '../assets/icons';
 import { skills } from '@/data/achievements';
 const TechStack: React.FC = () => {
@@ -8,7 +8,11 @@ const TechStack: React.FC = () => {
       return {
         ...category,
         skills: category.skills.filter((skill) => {
-          return iconClasses.join('').indexOf(skill.name.toLowerCase()) === -1;
+          return (
+            iconClasses
+              .join('')
+              .indexOf(skill.name.toLowerCase().replace(/[^\w]/g, '')) === -1
+          );
         }),
       };
     })
@@ -23,13 +27,13 @@ const TechStack: React.FC = () => {
       <Box>
         <Text mb={2}>On a day-to-day basis I work with:</Text>
 
-        <Flex justifyContent="space-evenly">
+        <Wrap justifyContent="space-evenly">
           {iconClasses.map((icon, index) => (
             <Icon key={`icon-${index}`}>
-              <i style={{ fontSize: '3rem' }} className={icon} />
+              <i style={{ fontSize: '2.5rem' }} className={icon} />
             </Icon>
           ))}
-        </Flex>
+        </Wrap>
       </Box>
 
       <Box>
