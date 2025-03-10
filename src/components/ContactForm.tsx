@@ -74,6 +74,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
           name="name"
           onChange={handleChange}
           value={values.name}
+          placeholder="Super Cool Person"
         />
         {errors.name && <Field.ErrorText>{errors.name}</Field.ErrorText>}
       </Field.Root>
@@ -86,6 +87,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
           onChange={handleChange}
           value={values.email}
           type="email"
+          placeholder="you@email.com"
         />
         {errors.email && <Field.ErrorText>{errors.email}</Field.ErrorText>}
       </Field.Root>
