@@ -9,10 +9,17 @@ import {
   AlertIcon,
 } from '@chakra-ui/react';
 import { useForm } from '@/hooks/useForm';
+import { z } from 'zod';
 
 interface ContactFormProps {
   setSent: (sent: boolean) => void;
 }
+
+const contactFormSchema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  email: z.string().email('Please enter a valid email address'),
+  message: z.string().min(5, 'Message must be at least 5 characters'),
+});
 
 const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
   const proxyUrl = import.meta.env.VITE_CLOUDFLARE_PROXY;
@@ -49,11 +56,18 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
     }
   };
 
-  const { values, handleChange, handleSubmit, isSubmitting, submitError } =
-    useForm({
-      initialValues,
-      onSubmit: notifyEli,
-    });
+  const {
+    values,
+    handleChange,
+    handleSubmit,
+    isSubmitting,
+    submitError,
+    errors,
+  } = useForm({
+    initialValues,
+    onSubmit: notifyEli,
+    validationSchema: contactFormSchema,
+  });
 
   return (
     <Stack gap={4}>
@@ -76,7 +90,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
           name="name"
           onChange={handleChange}
           value={values.name}
+          isInvalid={!!errors.name}
         />
+        {errors.name && <Field.ErrorMessage>{errors.name}</Field.ErrorMessage>}
       </Field.Root>
 
       <Field.Root>
@@ -87,7 +103,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
           onChange={handleChange}
           value={values.email}
           type="email"
+          isInvalid={!!errors.email}
         />
+        {errors.email && (
+          <Field.ErrorMessage>{errors.email}</Field.ErrorMessage>
+        )}
       </Field.Root>
 
       <Field.Root>
@@ -98,7 +118,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
           colorPalette="red"
           onChange={handleChange}
           value={values.message}
+          isInvalid={!!errors.message}
         />
+        {errors.message && (
+          <Field.ErrorMessage>{errors.message}</Field.ErrorMessage>
+        )}
       </Field.Root>
 
       <Button

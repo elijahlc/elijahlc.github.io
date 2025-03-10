@@ -1,15 +1,18 @@
 import { useState } from 'react';
+import { z } from 'zod'; // We'll need to install this
 
 type FormValues = Record<string, string>;
 
 interface UseFormProps<T extends FormValues> {
   initialValues: T;
   onSubmit: (values: T) => Promise<void>;
+  validationSchema?: z.ZodType<any>;
 }
 
 export function useForm<T extends FormValues>({
   initialValues,
   onSubmit,
+  validationSchema,
 }: UseFormProps<T>) {
   const [values, setValues] = useState<T>(initialValues);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,7 +32,35 @@ export function useForm<T extends FormValues>({
     }
   };
 
+  const validate = (): boolean => {
+    if (!validationSchema) return true;
+
+    try {
+      validationSchema.parse(values);
+      setErrors({});
+      return true;
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const formattedErrors: Partial<Record<keyof T, string>> = {};
+
+        error.errors.forEach((err) => {
+          if (err.path.length > 0) {
+            const field = err.path[0] as keyof T;
+            formattedErrors[field] = err.message;
+          }
+        });
+
+        setErrors(formattedErrors);
+      }
+      return false;
+    }
+  };
+
   const handleSubmit = async () => {
+    if (validationSchema && !validate()) {
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitError(null);
 
