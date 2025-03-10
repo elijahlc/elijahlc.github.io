@@ -9,16 +9,20 @@ interface LinksProps {
 const Links: React.FC<LinksProps> = ({ justifyContent }) => {
   return (
     <Flex justifyContent={justifyContent} display="flex" gap={2}>
-      <Icon as={Link} href="https://github.com/elijahlc" fontSize="2.5rem">
-        <FaGithub />
-      </Icon>
-      <Icon
-        as={Link}
-        href="https://www.linkedin.com/in/elijahcohen/"
-        fontSize="2.5rem"
+      <Link
+        href="https://github.com/elijahlc"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <FaLinkedin />
-      </Icon>
+        <Icon as={FaGithub} color="white" fontSize="2.5rem" />
+      </Link>
+      <Link
+        href="https://www.linkedin.com/in/elijahcohen/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon as={FaLinkedin} color="white" fontSize="2.5rem" />
+      </Link>
     </Flex>
   );
 };
