@@ -11,9 +11,7 @@ type SkillCategory = {
   skills: Skill[];
 };
 
-type Skill = {
-  name: string;
-};
+type Skill = { name: string };
 
 type AchievementCategory = 'accomplishment' | 'recommendation';
 
@@ -62,10 +60,7 @@ export const skills: SkillCategory[] = [
     name: 'DevOps / deployment',
     skills: [{ name: 'Docker' }, { name: 'Heroku' }, { name: 'Codefresh' }],
   },
-  {
-    name: 'Version control',
-    skills: [{ name: 'Git' }, { name: 'GitHub' }],
-  },
+  { name: 'Version control', skills: [{ name: 'Git' }, { name: 'GitHub' }] },
   {
     name: 'Testing',
     skills: [{ name: 'Jest' }, { name: 'Mocha' }, { name: 'Chai' }],

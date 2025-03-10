@@ -5,7 +5,7 @@ import Section from '@/components/Section';
 import SectionHeading from '@/components/SectionHeading';
 
 interface ContactProps {
-  sectionRef: React.RefObject<HTMLDivElement | null>;
+  sectionRef?: React.RefObject<HTMLDivElement>;
 }
 
 const Contact: React.FC<ContactProps> = ({ sectionRef }) => {

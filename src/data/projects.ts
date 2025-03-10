@@ -3,10 +3,7 @@ export interface Project {
   description: string;
   images: Array<unknown>;
   techStack: Array<string>;
-  links?: {
-    github?: string;
-    live?: string;
-  };
+  links?: { github?: string; live?: string };
   contributions: Array<string>;
 }
 
@@ -27,9 +24,7 @@ export const projects: Array<Project> = [
       'Chai',
       'Supertest',
     ],
-    links: {
-      github: 'https://github.com/elijahlc/locker.ai',
-    },
+    links: { github: 'https://github.com/elijahlc/locker.ai' },
     contributions: [
       'Designed and architected PostgreSQL database',
       'Implemented consistent UI styling and mobile responsiveness',

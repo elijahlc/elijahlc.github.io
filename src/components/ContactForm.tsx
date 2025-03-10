@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Stack,
-  Field,
-  Input,
-  Textarea,
-  Button,
-  Alert,
-  AlertIcon,
-} from '@chakra-ui/react';
+import { Stack, Field, Input, Textarea, Button, Alert } from '@chakra-ui/react';
 import { useForm } from '@/hooks/useForm';
 import { z } from 'zod';
 
@@ -115,8 +107,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
         size="xl"
         colorPalette="red"
         onClick={handleSubmit}
-        isLoading={isSubmitting}
-        loadingText="Sending..."
+        loading={isSubmitting}
       >
         Send message
       </Button>
