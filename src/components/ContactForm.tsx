@@ -16,20 +16,16 @@ interface ContactFormProps {
 }
 
 const contactFormSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
+  name: z.string().min(1, 'I need to know who you are!'),
   email: z.string().email('Please enter a valid email address'),
-  message: z.string().min(5, 'Message must be at least 5 characters'),
+  message: z.string().min(5, 'I need to know what you want!'),
 });
 
 const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
   const proxyUrl = import.meta.env.VITE_CLOUDFLARE_PROXY;
   const webhookUrl = import.meta.env.VITE_WEBHOOK_URL;
 
-  const initialValues = {
-    name: '',
-    email: '',
-    message: '',
-  };
+  const initialValues = { name: '', email: '', message: '' };
 
   const notifyEli = async (formData: typeof initialValues) => {
     try {
@@ -37,9 +33,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
         `${proxyUrl}?url=${encodeURIComponent(webhookUrl)}`,
         {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
         }
       );
@@ -50,9 +44,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
 
       setSent(true);
     } catch (error) {
-      throw new Error(
-        'Network error. Please check your connection and try again.'
-      );
+      throw new Error('Failed to send your message. Sorry!');
     }
   };
 
@@ -83,19 +75,18 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
         </Alert.Root>
       )}
 
-      <Field.Root>
+      <Field.Root invalid={!!errors.name}>
         <Field.Label>Your name</Field.Label>
         <Input
           colorPalette="red"
           name="name"
           onChange={handleChange}
           value={values.name}
-          isInvalid={!!errors.name}
         />
-        {errors.name && <Field.ErrorMessage>{errors.name}</Field.ErrorMessage>}
+        {errors.name && <Field.ErrorText>{errors.name}</Field.ErrorText>}
       </Field.Root>
 
-      <Field.Root>
+      <Field.Root invalid={!!errors.email}>
         <Field.Label>Your email</Field.Label>
         <Input
           colorPalette="red"
@@ -103,14 +94,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
           onChange={handleChange}
           value={values.email}
           type="email"
-          isInvalid={!!errors.email}
         />
-        {errors.email && (
-          <Field.ErrorMessage>{errors.email}</Field.ErrorMessage>
-        )}
+        {errors.email && <Field.ErrorText>{errors.email}</Field.ErrorText>}
       </Field.Root>
 
-      <Field.Root>
+      <Field.Root invalid={!!errors.message}>
         <Field.Label>Message</Field.Label>
         <Textarea
           placeholder="What's up, Eli?"
@@ -118,11 +106,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ setSent }) => {
           colorPalette="red"
           onChange={handleChange}
           value={values.message}
-          isInvalid={!!errors.message}
         />
-        {errors.message && (
-          <Field.ErrorMessage>{errors.message}</Field.ErrorMessage>
-        )}
+        {errors.message && <Field.ErrorText>{errors.message}</Field.ErrorText>}
       </Field.Root>
 
       <Button
