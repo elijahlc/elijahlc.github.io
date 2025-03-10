@@ -17,7 +17,7 @@ const App: React.FC = () => {
       <About handleClick={scrollToContact} />
       <Achievements />
       <TechStack />
-      <Contact sectionRef={contactRef} />
+      <Contact sectionRef={contactRef as React.RefObject<HTMLDivElement>} />
     </Layout>
   );
 };

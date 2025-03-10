@@ -1,4 +1,4 @@
-import { useBreakpointValue } from '@chakra-ui/react';
+import { useBreakpointValue, HeadingProps } from '@chakra-ui/react';
 
 export const useResponsiveLayout = () => {
   const breakpoint =
@@ -19,6 +19,7 @@ export const useResponsiveLayout = () => {
       hardcodedHeight: !isMobile ? '100vh' : undefined,
       overflow: isMobile ? undefined : 'auto',
       showFooter: isMobile,
+      headingSize: isMobile ? '2xl' : isTablet ? '4xl' : '5xl',
       sidebar: {
         display: isMobile ? 'none' : 'block',
         width: isDesktop ? '25%' : isTablet ? '33%' : '100%',
