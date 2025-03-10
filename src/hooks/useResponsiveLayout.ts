@@ -19,7 +19,7 @@ export const useResponsiveLayout = () => {
       hardcodedHeight: !isMobile ? '100vh' : undefined,
       overflow: isMobile ? undefined : 'auto',
       showFooter: isMobile,
-      headingSize: isMobile ? '2xl' : isTablet ? '4xl' : '5xl',
+      headingSize: isMobile ? '4xl' : '5xl',
       sidebar: {
         display: isMobile ? 'none' : 'block',
         width: isDesktop ? '25%' : isTablet ? '33%' : '100%',

@@ -15,8 +15,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
   return (
     <Heading
       as="h2"
-      // size={layout.headingSize as HeadingProps['size']}
-      size="5xl"
+      size={layout.headingSize as HeadingProps['size']}
       textTransform="uppercase"
       color="yellow.600"
       {...props}

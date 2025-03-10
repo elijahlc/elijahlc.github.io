@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Stack, Heading, Text, Mark, Button } from '@chakra-ui/react';
+import { Box, Text, Mark, Button } from '@chakra-ui/react';
+import Section from '@/components/Section';
+import SectionHeading from '@/components/SectionHeading';
 
 interface AboutProps {
   handleClick: () => void;
@@ -7,22 +9,14 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ handleClick }) => {
   return (
-    <Stack as="section" paddingX={6} gap={6} fontSize="lg">
+    <Section>
       <Box>
-        <Heading
-          as="h2"
-          size="5xl"
-          textTransform="uppercase"
-          color="yellow.600"
-        >
-          Hi, I'm Eli.
-        </Heading>
+        <SectionHeading>Hi, I'm Eli.</SectionHeading>
         <Text fontWeight="bold" fontSize="xl" color="blue.700">
           Former ad tech customer success & client services leader turned
           software engineer.
         </Text>
       </Box>
-
       <Text>
         What started in 2019 as a knack for debugging basic bugs in my clients'
         Facebook pixels grew into a deep excitement for creating products that
@@ -36,7 +30,6 @@ const About: React.FC<AboutProps> = ({ handleClick }) => {
         </Mark>{' '}
         for people!
       </Text>
-
       <Button
         alignSelf="start"
         colorPalette="cyan"
@@ -45,7 +38,7 @@ const About: React.FC<AboutProps> = ({ handleClick }) => {
       >
         Get in touch
       </Button>
-    </Stack>
+    </Section>
   );
 };
 

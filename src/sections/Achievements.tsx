@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Stack, Heading, Text, List, Blockquote } from '@chakra-ui/react';
+import { Box, Text, List, Blockquote } from '@chakra-ui/react';
+import Section from '@/components/Section';
+import SectionHeading from '@/components/SectionHeading';
 import { recentAchievements } from '@/data/achievements';
 
 const Achievements: React.FC = () => {
@@ -11,10 +13,8 @@ const Achievements: React.FC = () => {
   );
 
   return (
-    <Stack as="section" paddingX={6} gap={6} fontSize="lg">
-      <Heading as="h2" size="5xl" textTransform="uppercase" color="yellow.600">
-        Recent Achievements
-      </Heading>
+    <Section>
+      <SectionHeading>Recent Achievements</SectionHeading>
 
       <Box>
         <Text mb={2}>In my current role, I:</Text>
@@ -43,7 +43,7 @@ const Achievements: React.FC = () => {
           </Blockquote.Root>
         ))}
       </Box>
-    </Stack>
+    </Section>
   );
 };
 
