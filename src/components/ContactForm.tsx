@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Stack, Field, Input, Textarea, Button } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -14,8 +14,6 @@ const contactFormSchema = yup.object({
 const ContactForm: React.FC = () => {
   const proxyUrl = import.meta.env.VITE_CLOUDFLARE_PROXY;
   const webhookUrl = import.meta.env.VITE_WEBHOOK_URL;
-
-  const [submissionError, setSubmissionError] = useState<string | null>(null);
 
   const notifyEli = async (
     formData: yup.InferType<typeof contactFormSchema>
@@ -41,6 +39,8 @@ const ContactForm: React.FC = () => {
         type: 'success',
         duration: 5000,
       });
+
+      reset();
     } catch (error) {
       toaster.create({
         title: 'Error',
@@ -54,6 +54,7 @@ const ContactForm: React.FC = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm({ resolver: yupResolver(contactFormSchema) });
 
